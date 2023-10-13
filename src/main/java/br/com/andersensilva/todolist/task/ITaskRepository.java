@@ -1,7 +1,13 @@
 package br.com.andersensilva.todolist.task;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.UUID;
 
-public interface ITaskRepository extends <TaskModel, UUID>{
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+
+public interface ITaskRepository extends  JpaRepository<TaskModel, UUID>{
+
+    List<TaskModel> findByIdUser(UUID idUser);
     
 }
